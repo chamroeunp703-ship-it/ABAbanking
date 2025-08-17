@@ -1,0 +1,217 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ABA Bank — Digital banking that works for you</title>
+  <meta name="description" content="Demo banking website — accounts, cards, loans, contact." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header" role="banner">
+    <div class="container nav">
+      <div class="brand" aria-label="ABA Bank home">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <span class="brand-title">ABA Bank</span>
+      </div>
+
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu">Menu</button>
+
+      <nav id="primaryNav" aria-label="Primary">
+        <div class="nav-links" id="navLinks">
+          <a href="#home" data-nav="home">Home</a>
+          <a href="#products" data-nav="products">Products</a>
+          <a href="#about" data-nav="about">About</a>
+          <a href="#contact" data-nav="contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="home" class="hero container">
+      <div>
+        <span class="badge" role="img" aria-label="shield">🔒 Bank-grade security</span>
+        <h1>Digital banking that works for you</h1>
+        <p class="lede">Open an account in minutes, move money instantly and manage finances on the go.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#products">Open an account</a>
+          <a class="btn btn-outline" href="#features">See features</a>
+        </div>
+      </div>
+
+      <aside class="card calculator" aria-labelledby="calcTitle">
+        <h2 id="calcTitle">Savings Goal Calculator</h2>
+        <p class="helper">Demo — no data saved.</p>
+        <form id="calcForm" aria-describedby="calcHelp">
+          <label>Goal amount
+            <input id="goal" class="input" type="number" min="0" step="0.01" value="2000" required>
+          </label>
+          <label>Months
+            <input id="months" class="input" type="number" min="1" step="1" value="12" required>
+          </label>
+          <label>Annual interest %
+            <input id="rate" class="input" type="number" min="0" step="0.01" value="2.5">
+          </label>
+          <label>Initial deposit
+            <input id="initial" class="input" type="number" min="0" step="0.01" value="200">
+          </label>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Calculate</button>
+            <div id="calcError" class="error" aria-live="polite"></div>
+          </div>
+        </form>
+
+        <div class="result card">
+          <strong>Monthly deposit needed:</strong>
+          <div class="kpi" id="monthlyNeed">$0.00</div>
+          <div class="kpi-sub" id="calcSummary"></div>
+        </div>
+        <p id="calcHelp" class="helper">Assumes monthly compounding. Illustration only.</p>
+      </aside>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="container pad-y">
+      <div class="grid">
+        <article class="card col-4">
+          <h3>Instant transfers</h3>
+          <p>Send and receive money in seconds — no hidden fees.</p>
+        </article>
+        <article class="card col-4">
+          <h3>Smart budgeting</h3>
+          <p>Auto-categorize spending and set savings targets.</p>
+        </article>
+        <article class="card col-4">
+          <h3>24/7 support</h3>
+          <p>Chat with an agent anytime you need help.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="container pad-y">
+      <h2>Products</h2>
+      <div class="grid">
+        <article class="product-card col-4">
+          <span class="tag">Checking</span>
+          <h3>Everyday Checking</h3>
+          <p>No monthly fees, nationwide ATM access.</p>
+          <strong class="rate">0.10% APY</strong>
+          <a class="btn btn-outline" href="#contact">Apply</a>
+        <article class="product-card col-4">
+          <span class="tag">Savings</span>
+          <h3>High-Yield Savings</h3>
+          <p>Grow your reserve faster.</p>
+          <strong class="rate">2.25% APY</strong>
+          <a class="btn btn-outline" href="#contact">Open</a>
+        </article>
+
+        <article class="product-card col-4">
+          <span class="tag">Loan</span>
+          <h3>Personal Loan</h3>
+          <p>Flexible terms tailored to life events.</p>
+          <strong class="rate">From 7.99% APR</strong>
+          <a class="btn btn-outline" href="#contact">Check rate</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container pad-y">
+      <h2>About ABA Bank</h2>
+      <p class="lede">Simple, secure, transparent banking for everyone.</p>
+
+      <div class="grid">
+        <div class="card col-6">
+          <h3>Security first</h3>
+          <ul>
+            <li>Strong encryption &amp; 2FA</li>
+            <li>Biometric login</li>
+            <li>Fraud monitoring 24/7</li>
+          </ul>
+        </div>
+        <div class="card col-6">
+          <h3>Careers</h3>
+          <p>We're hiring. Email <a href="mailto:careers@example.com">careers@example.com</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container pad-y">
+      <h2>Contact us</h2>
+      <p class="lede">We’re here to help — demo form only.</p>
+
+      <form id="contactForm" class="card" novalidate>
+        <label>Full name
+          <input id="name" class="input" required placeholder="Jane Doe">
+        </label>
+        <label>Email
+          <input id="email" class="input" type="email" required placeholder="jane@example.com">
+        </label>
+        <label>Topic
+          <select id="topic" required>
+            <option value="">Select</option>
+            <option>Accounts</option>
+            <option>Cards</option>
+            <option>Loans</option>
+            <option>General</option>
+          </select>
+        </label>
+        <label>Message
+          <textarea id="message" class="input" rows="5" required placeholder="How can we help?"></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Send</button>
+          <div id="formStatus" class="helper" aria-live="polite"></div>
+        </div>
+      </form>
+
+      <div class="grid" style="margin-top:1rem">
+        <div class="card col-6">
+          <h3>FAQ</h3>
+          <details><summary>How do I open an account?</summary><p>Click Open an account and follow steps.</p></details>
+        </div>
+        <div class="card col-6">
+          <h3>Branches</h3>
+          <p>Phnom Penh — Mon–Fri 9:00–17:00</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid pad-y">
+      <div>
+        <div class="brand">
+          <div class="brand-logo" aria-hidden="true"></div>
+          <strong>ABA Bank</strong>
+        </div>
+        <p class="helper">Demo template — replace with official content.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="#products">Accounts</a></li><li><a href="#products">Cards</a></li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="#about">About</a></li></ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul><li><a href="#contact">Contact</a></li></ul>
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> ABA Bank — Demo</div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>document.querySelector('[data-nav="home"]').setAttribute('aria-current','page');</script>
+</body>
+</html>
